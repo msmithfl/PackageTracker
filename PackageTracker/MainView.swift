@@ -15,6 +15,8 @@ struct MainView: View {
     
     var body: some View {
         
+        //--------------------------
+        
         ZStack{
             //-----------------------------
             //Background Color
@@ -55,7 +57,7 @@ struct MainView: View {
                 // end of HStack
                 
                 //-------------------------------
-                
+                //Tracking Button
                 Button(action: {
                     isTrackingViewPresent.toggle()
                 }) {

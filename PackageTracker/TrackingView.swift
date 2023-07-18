@@ -12,7 +12,13 @@ struct TrackingView: View {
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
+        
+        //----------------------------
+        
         VStack{
+            
+            //----------------------------
+            //Main Title
             Text("Tracking Info")
                 .font(.largeTitle)
                 .bold()
@@ -21,6 +27,8 @@ struct TrackingView: View {
             
             Spacer()
             
+            //----------------------------
+            //Cancel Button
             Button(action: {
                 
                 presentationMode.wrappedValue.dismiss()
@@ -29,6 +37,7 @@ struct TrackingView: View {
                     .foregroundColor(.gray)
                     .font(.title)
             }
+            
         }// end of VStack
         
     }// end of body
