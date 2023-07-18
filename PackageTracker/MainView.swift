@@ -24,10 +24,12 @@ struct MainView: View {
                 .edgesIgnoringSafeArea(.all)
             
             //-----------------------------
-            //Main Title
+            //Main VStack
             VStack{
                 Spacer()
                 
+                //-----------------------------
+                //Main Image/Title Section
                 Image("package")
                     .resizable()
                     .frame(width: 100, height: 100)
@@ -42,7 +44,7 @@ struct MainView: View {
                 HStack{
                     Image(systemName: "number")
                         .foregroundColor(.white)
-                    TextField("Tracking Number", text:$trackingNum)
+                    TextField("Tracking Number", text: $trackingNum)
                         .foregroundColor(.white)
                         .font(.title)
                         .fontWeight(.bold)
