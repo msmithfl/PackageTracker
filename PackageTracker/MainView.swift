@@ -2,45 +2,34 @@
 //  MainView.swift
 //  PackageTracker
 //
-//  Created by Matthew Smith on 7/18/23.
+//  Created by Geovani Rodriguez on 7/23/23.
 //
 
 import SwiftUI
 
 struct MainView: View {
-    
     @State private var isTrackingViewPresent = false
-    
     @State private var trackingNum: String = ""
-    
+    @State private var trackedPackages: [String] = []
+    @State private var showError: Bool = false
+
     var body: some View {
-        
-        //--------------------------
-        
         ZStack{
-            //-----------------------------
-            //Background Color
             Color(red: 0.4627, green: 0.8392, blue: 1.0)
                 .edgesIgnoringSafeArea(.all)
-            
-            //-----------------------------
-            //Main VStack
+
             VStack{
                 Spacer()
-                
-                //-----------------------------
-                //Main Image/Title Section
+
                 Image("package")
                     .resizable()
                     .frame(width: 100, height: 100)
-                
+
                 Text("Where's My Package?")
                     .font(.largeTitle)
                     .bold()
                     .foregroundColor(.white)
-                
-                //-------------------------------
-                //Tracking Number Input Field
+
                 HStack{
                     Image(systemName: "number")
                         .foregroundColor(.white)
@@ -48,20 +37,27 @@ struct MainView: View {
                         .foregroundColor(.white)
                         .font(.title)
                         .fontWeight(.bold)
-                    
-                    
+
                 }.padding()
                     .overlay{
                         RoundedRectangle(cornerRadius: 10)
                             .stroke(lineWidth: 2)
                             .foregroundColor(.white)
                     }.padding()
-                // end of HStack
-                
-                //-------------------------------
-                //Tracking Button
+
+                if showError {
+                    Text("Please enter a valid tracking number.")
+                        .foregroundColor(.red)
+                }
+
                 Button(action: {
-                    isTrackingViewPresent.toggle()
+                    if mockData[trackingNum] != nil {
+                        isTrackingViewPresent.toggle()
+                        trackedPackages.append(trackingNum)
+                        showError = false
+                    } else {
+                        showError = true
+                    }
                 }) {
                     Text("Track")
                         .foregroundColor(.white)
@@ -74,19 +70,30 @@ struct MainView: View {
                                 .fill(Color.black)
                                 .foregroundColor(.black)
                                 .opacity(0.5)
-                        ).padding(.horizontal)                }
-                         .sheet(isPresented: $isTrackingViewPresent) {
-                        TrackingView()
+                        ).padding(.horizontal)
+                }
+                .sheet(isPresented: $isTrackingViewPresent) {
+                    TrackingView(trackingNumber: $trackingNum)
+                }
+
+                if !trackedPackages.isEmpty {
+                    Text("Tracked Packages:")
+                        .font(.title2)
+                        .bold()
+                        .foregroundColor(.white)
+                        .padding(.top)
+
+                    ForEach(trackedPackages, id: \.self) { trackingNumber in
+                        Text(trackingNumber)
+                            .foregroundColor(.white)
                     }
+                }
+
                 Spacer()
-                
-            }// end of VStack
-                
-        }// end of ZStack
-        
-    }// end of body
-    
-}// end of View
+            }
+        }
+    }
+}
 
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {

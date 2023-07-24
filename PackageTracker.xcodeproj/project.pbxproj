@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C2CB50D2A6D8AAD00B40A08 /* PackageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2CB50C2A6D8AAD00B40A08 /* PackageData.swift */; };
 		C95448502A65BAB500BB33EF /* PackageTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C954484F2A65BAB500BB33EF /* PackageTrackerApp.swift */; };
 		C95448542A65BAB700BB33EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C95448532A65BAB700BB33EF /* Assets.xcassets */; };
 		C95448572A65BAB700BB33EF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C95448562A65BAB700BB33EF /* Preview Assets.xcassets */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C2CB50C2A6D8AAD00B40A08 /* PackageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageData.swift; sourceTree = "<group>"; };
 		C954484C2A65BAB500BB33EF /* PackageTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PackageTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C954484F2A65BAB500BB33EF /* PackageTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageTrackerApp.swift; sourceTree = "<group>"; };
 		C95448532A65BAB700BB33EF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 				C954484F2A65BAB500BB33EF /* PackageTrackerApp.swift */,
 				C99D93092A67209100EE0B6A /* MainView.swift */,
 				C99D930B2A6725A100EE0B6A /* TrackingView.swift */,
+				2C2CB50C2A6D8AAD00B40A08 /* PackageData.swift */,
 				C95448532A65BAB700BB33EF /* Assets.xcassets */,
 				C95448552A65BAB700BB33EF /* Preview Content */,
 			);
@@ -142,6 +145,7 @@
 			files = (
 				C99D930A2A67209100EE0B6A /* MainView.swift in Sources */,
 				C99D930C2A6725A100EE0B6A /* TrackingView.swift in Sources */,
+				2C2CB50D2A6D8AAD00B40A08 /* PackageData.swift in Sources */,
 				C95448502A65BAB500BB33EF /* PackageTrackerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
